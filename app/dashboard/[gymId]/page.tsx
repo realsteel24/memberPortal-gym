@@ -1,6 +1,6 @@
 "use client";
 
-import { useState,  } from "react";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,25 @@ const initialClasses = [
   },
 ];
 
-export default function DashboardPage() {
+export default function Dashboard({
+  params,
+}: {
+  params: Promise<{ gymId: string }>;
+}) {
+  const [gymId, setGymId] = useState("");
+
+  useEffect(() => {
+    const getGymId = async () => {
+      try {
+        const resolvedGymId = (await params).gymId;
+        setGymId(resolvedGymId);
+      } catch (err) {
+        console.log("Failed to fetch gymId.");
+      }
+    };
+
+    getGymId();
+  }, [params]);
   const [upcomingClasses, setUpcomingClasses] = useState(initialClasses);
 
   const cancelBooking = (id: number) => {
