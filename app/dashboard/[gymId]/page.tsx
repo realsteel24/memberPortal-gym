@@ -43,7 +43,7 @@ export default function Dashboard({
         const resolvedGymId = (await params).gymId;
         setGymId(resolvedGymId);
       } catch (err) {
-        console.log("Failed to fetch gymId.");
+        console.log("Failed to fetch gymId.", err);
       }
     };
 

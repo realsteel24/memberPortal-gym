@@ -25,7 +25,7 @@ export default function DashboardLayout({
         const resolvedGymId = (await params).gymId;
         setGymId(resolvedGymId);
       } catch (err) {
-        console.log("Failed to fetch gymId.");
+        console.log("Failed to fetch gymId.", err);
       }
     };
 
@@ -59,7 +59,7 @@ export default function DashboardLayout({
           <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
             <Link href="/" className="flex items-center space-x-2">
               <Dumbbell className="h-6 w-6" />
-              <span className="text-xl font-bold">Mohan's Planet</span>
+              <span className="text-xl font-bold">Mohans Planet</span>
             </Link>
             <ul className="hidden md:flex md:space-x-4 items-center">
               {navItems.map((item) => (
@@ -104,7 +104,7 @@ export default function DashboardLayout({
       )}
       <footer className="bg-red-700 text-primary-foreground py-4 mt-8">
         <div className="container mx-auto px-4 text-center">
-          © 2023 FitHub Gym. All rights reserved.
+          © 2024 Mohans Planet. All rights reserved.
         </div>
       </footer>
     </div>

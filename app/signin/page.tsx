@@ -62,7 +62,7 @@ export default function SignInPage() {
             <Dumbbell className="h-10 w-10 text-primary" />
           </div>
           <CardTitle className="text-2xl font-bold text-center">
-            Sign in to Mohan's Planet
+            Sign in to Mohans Planet
           </CardTitle>
           <CardDescription className="text-center text-muted-foreground">
             Enter your email and password to access your account
@@ -77,11 +77,11 @@ export default function SignInPage() {
               placeholder="CHAMPS"
               required
               className="border-primary"
-              onChange={(e) => {
+              onChange={(e) =>
                 e.target.value.toUpperCase().trim() === "CHAMPS"
                   ? setGymCode("MP")
-                  : setGymCode(e.target.value.trim().toUpperCase());
-              }}
+                  : setGymCode(e.target.value.trim().toUpperCase())
+              }
             />
           </div>
           <div className="space-y-2">
