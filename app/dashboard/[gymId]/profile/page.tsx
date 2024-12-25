@@ -10,13 +10,13 @@ export default function ProfilePage() {
   // In a real app, you would fetch this data from your backend
   const { gymId } = useParams<{ gymId: string }>();
   const { loading, member } = useMemberDetails(gymId);
-  const user = {
-    name: "John Doe",
-    email: "john.doe@example.com",
-    membershipType: "Premium",
-    joinDate: "2023-01-15",
-    nextPaymentDue: "2023-07-15",
-  };
+  // const user = {
+  //   name: "John Doe",
+  //   email: "john.doe@example.com",
+  //   membershipType: "Premium",
+  //   joinDate: "2023-01-15",
+  //   nextPaymentDue: "2023-07-15",
+  // };
 
   return (
     <div className="max-w-2xl mx-auto">

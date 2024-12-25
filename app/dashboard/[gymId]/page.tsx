@@ -35,6 +35,7 @@ export default function Dashboard({
   params: Promise<{ gymId: string }>;
 }) {
   const [gymId, setGymId] = useState("");
+  console.log(gymId);
 
   useEffect(() => {
     const getGymId = async () => {

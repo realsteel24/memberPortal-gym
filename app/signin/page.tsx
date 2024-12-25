@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { BACKEND_URL } from "@/config";
 
 import { useRouter } from "next/navigation";
@@ -50,6 +50,7 @@ export default function SignInPage() {
     } catch (e) {
       if (e instanceof Error) {
         setError(e.message);
+        console.log(error);
       } else setError("An unexpected error occurred");
     }
   };
