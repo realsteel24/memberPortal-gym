@@ -26,7 +26,8 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-background text-foreground">
+      <body className="bg-gradient">
+        <div className="fixed inset-0 -z-10 h-full w-full bg-[url('/noise3.png')] opacity-[0.4] pointer-events-none bg-repeat" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -34,10 +35,18 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="flex flex-col min-h-screen">
-            <main>
+            <main className="flex-grow container mx-auto py-8 mb-16 md:mb-0">
               {/* <main className="flex-grow container mx-auto py-8 mb-16 md:mb-0"> */}
               {children}
             </main>
+            <footer className="bg-glass-effect text-primary-foreground py-2">
+              <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="flex flex-col sm:flex-row justify-between items-center"></div>
+                <div className="my-2 text-center text-sm">
+                  © 2025 Mohan's Planet. All rights reserved.
+                </div>
+              </div>
+            </footer>
           </div>
         </ThemeProvider>
       </body>

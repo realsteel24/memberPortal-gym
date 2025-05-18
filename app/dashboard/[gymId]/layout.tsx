@@ -55,36 +55,34 @@ export default function DashboardLayout({
   return (
     <div className="flex flex-col min-h-screen">
       {!isMobile && (
-        <header className="bg-red-700 text-primary-foreground shadow-md">
-          <nav className="container mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/" className="flex items-center space-x-2">
-              <Dumbbell className="h-6 w-6" />
-              <span className="text-xl font-bold">Mohans Planet</span>
-            </Link>
-            <ul className="hidden md:flex md:space-x-4 items-center">
-              {navItems.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="block hover:text-gray-300 transition-colors"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-              <li>
-                <ThemeToggle />
+        <nav className="container bg-background/40 rounded-lg mx-auto px-4 py-2 flex justify-between items-center">
+          <Link href="/" className="flex items-center space-x-2">
+            <Dumbbell className="h-6 w-6" />
+            <span className="text-xl font-bold">Mohans Planet</span>
+          </Link>
+          <ul className="hidden md:flex md:space-x-4 items-center">
+            {navItems.map((item) => (
+              <li key={item.href}>
+                <Link
+                  href={item.href}
+                  className="block hover:text-gray-300 transition-colors"
+                >
+                  {item.label}
+                </Link>
               </li>
-            </ul>
-          </nav>
-        </header>
+            ))}
+            <li>
+              <ThemeToggle />
+            </li>
+          </ul>
+        </nav>
       )}
 
       <main className="flex-grow container mx-auto px-4 py-8 mb-16 md:mb-0">
         {children}
       </main>
       {isMobile && (
-        <nav className="fixed bottom-0 left-0 right-0 bg-primary text-primary-foreground shadow-md">
+        <nav className="fixed bottom-0 left-0 right-0 bg-glass-effect text-primary-foreground shadow-md">
           <ul className="flex justify-around items-center h-16">
             {navItems.map((item) => (
               <li key={item.href}>
@@ -102,11 +100,6 @@ export default function DashboardLayout({
           </ul>
         </nav>
       )}
-      <footer className="bg-red-700 text-primary-foreground py-4 mt-8">
-        <div className="container mx-auto px-4 text-center">
-          © 2024 Mohans Planet. All rights reserved.
-        </div>
-      </footer>
     </div>
   );
 }

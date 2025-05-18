@@ -55,8 +55,8 @@ export default function SignInPage() {
     }
   };
   return (
-    <div className="container flex items-center justify-center min-h-screen py-12 bg-background text-foreground">
-      <Card className="w-full max-w-md border-primary">
+    <div className="container flex items-center justify-center min-h-screen py-12 bg-background/10 text-foreground">
+      <Card className="w-full max-w-md border-slate-600/40 bg-black/10">
         <CardHeader className="space-y-1">
           <div className="flex items-center justify-center mb-4">
             <Dumbbell className="h-10 w-10 text-primary" />
@@ -76,7 +76,7 @@ export default function SignInPage() {
               type="gymId"
               placeholder="CHAMPS"
               required
-              className="border-primary"
+              className="border-slate-600/40"
               onChange={(e) =>
                 e.target.value.toUpperCase().trim() === "CHAMPS"
                   ? setGymCode("MP")
@@ -91,7 +91,7 @@ export default function SignInPage() {
               type="email"
               placeholder="m@example.com"
               required
-              className="border-primary"
+              className="border-slate-600/40"
               onChange={(e) => setEmail(e.target.value.trim())}
             />
           </div>
@@ -101,7 +101,7 @@ export default function SignInPage() {
               id="password"
               type="password"
               required
-              className="border-primary"
+              className="border-slate-600/40"
               onChange={(e) => setPassword(e.target.value)}
             />
           </div>
@@ -125,13 +125,13 @@ export default function SignInPage() {
           <div className="grid grid-cols-2 gap-4">
             <Button
               variant="outline"
-              className="border-primary hover:bg-primary hover:text-primary-foreground"
+              className="border-slate-600/40 hover:bg-primary hover:text-primary-foreground"
             >
               Google
             </Button>
             <Button
               variant="outline"
-              className="border-primary hover:bg-primary hover:text-primary-foreground"
+              className="border-slate-600/40 hover:bg-primary hover:text-primary-foreground"
             >
               Apple
             </Button>

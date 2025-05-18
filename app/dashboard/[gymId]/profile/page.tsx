@@ -39,17 +39,13 @@ export default function ProfilePage() {
               <div className="text-center sm:text-left">
                 <CardTitle className="text-2xl">{member?.name}</CardTitle>
                 <p className="text-muted-foreground">
-                  {member ? (
-                    member?.Members[0]?.MemberPrograms.length > 0 ? (
-                      member.Members[0].MemberPrograms.map(
-                        (program) => program.Program.name || "N/A"
-                      ).join(", ")
-                    ) : (
-                      "N/A"
-                    )
-                  ) : (
-                    <div>Loading</div>
-                  )}
+                  {member
+                    ? member?.Members[0]?.MemberPrograms.length > 0
+                      ? member.Members[0].MemberPrograms.map(
+                          (program) => program.Program.name || "N/A"
+                        ).join(", ")
+                      : "N/A"
+                    : "-"}
                   {` `}Member
                 </p>
               </div>
