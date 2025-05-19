@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 interface MembershipCardProps {
   membershipType: string;
   startDate: string;
-  nextPayment: string;
+  nextPayment: string | undefined;
   amount: number;
   status: "active" | "expired" | "pending";
 }
@@ -31,9 +31,13 @@ const MembershipCard = ({
       </CardHeader>
       <CardContent>
         <div className="grid gap-1">
-          <div className="text-2xl font-bold text-foreground">{membershipType}</div>
-          <p className="text-sm text-muted-foreground">Started on {startDate}</p>
-          
+          <div className="text-2xl font-bold text-foreground">
+            {membershipType}
+          </div>
+          <p className="text-sm text-muted-foreground">
+            Started on {startDate}
+          </p>
+
           <div className="mt-4 flex justify-between items-center">
             <div className="text-sm text-muted-foreground">Next Payment</div>
             <div className="font-medium text-foreground">{nextPayment}</div>

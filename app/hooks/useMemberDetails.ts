@@ -30,10 +30,11 @@ export interface MemberProgramOptions {
 }
 
 export interface MemberFeesOptions {
+  id: string;
   feeCategoryId: string;
   paidDate: string;
   dueDate: string;
-  FeeCategories: { 0: { description: string } };
+  FeeCategories: { 0: { id: string; description: string } };
   Payments: PaymentOptions[];
 }
 

@@ -55,10 +55,11 @@ export default function DashboardLayout({
   return (
     <div className="flex flex-col min-h-screen">
       {!isMobile && (
-        <nav className="container bg-background/40 rounded-lg mx-auto px-4 py-2 flex justify-between items-center">
+        <nav className="sticky top-0 z-50 bg-background/40 backdrop-blur-md border-b border-white/10 px-4 py-2 flex justify-between items-center shadow-md rounded-lg">
           <Link href="/" className="flex items-center space-x-2">
-            <Dumbbell className="h-6 w-6" />
-            <span className="text-xl font-bold">Mohans Planet</span>
+            <img src="/planetlogo-white.png" className="h-14 w-14" />
+
+            <span className="text-l font-semibold ">Mohan's Planet</span>
           </Link>
           <ul className="hidden md:flex md:space-x-4 items-center">
             {navItems.map((item) => (
