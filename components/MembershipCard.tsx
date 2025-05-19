@@ -13,7 +13,7 @@ const MembershipCard = ({
   startDate,
   nextPayment,
   amount,
-  status,
+//   status,
 }: MembershipCardProps) => {
   return (
     <Card className="overflow-hidden border-border/50">

@@ -1,11 +1,5 @@
 "use client";
-import {
-  Dumbbell,
-  Home,
-  User,
-  CreditCard,
-  GroupIcon as Classes,
-} from "lucide-react";
+import { Home, User, CreditCard, GroupIcon as Classes } from "lucide-react";
 import Link from "next/link";
 import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { useEffect, useState } from "react";
@@ -59,7 +53,7 @@ export default function DashboardLayout({
           <Link href="/" className="flex items-center space-x-2">
             <img src="/planetlogo-white.png" className="h-14 w-14" />
 
-            <span className="text-l font-semibold ">Mohan's Planet</span>
+            <span className="text-l font-semibold ">Mohan&apos;s Planet</span>
           </Link>
           <ul className="hidden md:flex md:space-x-4 items-center">
             {navItems.map((item) => (

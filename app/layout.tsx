@@ -43,7 +43,7 @@ export default function RootLayout({
               <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col sm:flex-row justify-between items-center"></div>
                 <div className="my-2 text-center text-sm">
-                  © 2025 Mohan's Planet. All rights reserved.
+                  © 2025 Mohan&apos;s Planet. All rights reserved.
                 </div>
               </div>
             </footer>

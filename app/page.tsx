@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { Dumbbell, Users, Calendar, Trophy } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,7 +9,6 @@ export default function LandingPage() {
       <div className="fixed inset-0 -z-20 bg-gradient-to-br from-[#0a0a0a] via-[#1a0d0d] to-[#0a0a0a]" />
       {/* Hero Section */}
       <section className="relative h-[90vh] flex items-center justify-center">
-      
         <div className="absolute inset-0 bg-black/10" />
         <div className="relative z-10 text-center space-y-8 px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white leading-tight">
@@ -112,7 +110,6 @@ export default function LandingPage() {
           </div>
         </div>
       </section>
-
     </div>
   );
 }

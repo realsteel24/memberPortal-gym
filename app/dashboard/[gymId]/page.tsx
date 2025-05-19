@@ -1,5 +1,5 @@
 "use client";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Activity, Users, Calendar } from "lucide-react";
 import ProgramProgress from "@/components/ProgramProgress";
 import ClassHistory from "@/components/ClassHistory";
@@ -15,14 +15,16 @@ const Dashboard = () => {
     membershipType: "Premium Fitness",
     startDate: "Oct 15, 2023",
     nextPayment:
-      member?.Members?.[0]?.MemberFees
-        ?.filter((fee) => {
-          const parsed = parseInt(fee.feeCategoryId);
-          return isNaN(parsed) || parsed >= 10;
-        })
+      member?.Members?.[0]?.MemberFees?.filter((fee) => {
+        const parsed = parseInt(fee.feeCategoryId);
+        return isNaN(parsed) || parsed >= 10;
+      })
         ?.reduce((latest, fee) => {
-          return new Date(fee.dueDate) > new Date(latest.dueDate) ? fee : latest;
-        })?.dueDate?.split("T")[0] ?? "N/A",
+          return new Date(fee.dueDate) > new Date(latest.dueDate)
+            ? fee
+            : latest;
+        })
+        ?.dueDate?.split("T")[0] ?? "N/A",
     amount: 59.99,
     status: "active" as const,
   };
@@ -98,7 +100,9 @@ const Dashboard = () => {
           Dashboard
         </h1>{" "}
         <br></br>
-        <p className="text-muted-foreground">Welcome back, {member?.name}!</p>
+        <p className="text-muted-foreground">
+          Welcome back, {loading ? "loading..." : member?.name}!
+        </p>
       </div>
 
       <div className="grid gap-4 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
